@@ -1,0 +1,9 @@
+# https://docs.docker.com/get-started/02_our_app/
+FROM node:12-alpine
+RUN apk add --no-cache python g++ make
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+#https://docs.docker.com/get-started/06_bind_mounts/
+# ^^ this is where we got to.
